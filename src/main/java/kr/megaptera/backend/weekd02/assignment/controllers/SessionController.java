@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.*;
 public class SessionController {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public String login(@RequestAttribute String userId, @RequestParam String id, @RequestParam String password) {
+    public String login(@RequestAttribute String userId,
+                        @RequestParam String id, @RequestParam String password) {
         if (Strings.isNotBlank(userId) && userId.equals(id)) {
             return "이미 로그인 된 id입니다.";
         }
-        return "로그인 완료: " + id + " / " + password;
+        return "로그인 완료\n id : " + id + " password : " + password;
     }
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
     public String logOut(@RequestAttribute String userId){
-        return "로그아웃 : " + userId;
+        return "로그아웃\n id: " + userId;
     }
 }
