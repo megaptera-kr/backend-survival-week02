@@ -17,8 +17,8 @@
 
 ### 내 정보
 
-- 내 정보 `GET /profile`
-- 내 정보 수정 `PATCH /profile`
+- 내 정보 `GET /users/me`
+- 내 정보 수정 `PATCH /users/me`
 
 ### 상품
 
