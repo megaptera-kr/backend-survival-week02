@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
+
   @GetMapping
   public GetProductsResponse getProducts() {
     List<Product> products = Arrays.asList(

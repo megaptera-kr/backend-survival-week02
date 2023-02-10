@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
   @GetMapping("/me")
   public GetMeResponse getMe(@RequestAttribute Long userId) {
     return new GetMeResponse(userId, "Harry");
@@ -25,7 +26,8 @@ public class UserController {
 
 
   @PatchMapping("/me")
-  public UpdateMeResponse updateMe(@RequestAttribute Long userId, @RequestBody UpdateMeRequest request) {
+  public UpdateMeResponse updateMe(@RequestAttribute Long userId,
+      @RequestBody UpdateMeRequest request) {
     return new UpdateMeResponse(userId, request.getName());
   }
 
