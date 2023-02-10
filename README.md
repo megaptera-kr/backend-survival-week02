@@ -11,36 +11,36 @@
 
 ### 로그인/회원가입
 
-- 로그인
-- 로그아웃
-- 회원가입
+- 로그인    `POST /session`
+- 로그아웃   `DELETE /session`
+- 회원가입   `POST /users` or `POST /personal`   
 
 ### 내 정보
 
-- 내 정보 
-- 내 정보 수정 
-
+- 내 정보       `GET /users/{id}` or `GET /personal/{id}`
+- 내 정보 수정   `PATCH /users/{id}` or `PATCH /personal/{id}` -> 개인적이라는 의미를 강조하고자 personal 을 리소스로 사용하고 싶은데,  
+                                                            -> 단수형이라 사용하는 것이 맞는지 의문이 갑니다.. 과제 확인시 이에 대한 의견 말씀해주시면 너무 감사드릴것 같아요!
 ### 상품
 
-- 상품 목록
-- 상품 상세
+- 상품 목록   `GET /items`
+- 상품 상세   `GET /items/{id}`
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성
-- 상품에 리뷰 수정
-- 상품에 리뷰 삭제
+- 상품에 리뷰 작성   `POST /items/{items_id}/comments`
+- 상품에 리뷰 수정   `PATCH /items/{items_id}/comments/{comments_id}`
+- 상품에 리뷰 삭제   `DELETE /items/{items_id}/comments/{comments_id}`
 
 ### 장바구니
 
-- 장바구니에 상품 추가
-- 장바구니에 상품 삭제
-- 장바구니 (담긴 상품 목록)
+- 장바구니에 상품 추가       `POST /baskets`
+- 장바구니에 상품 삭제       `DELETE /baskets/{id}`
+- 장바구니 (담긴 상품 목록)   `GET /baskets`
 
 ### 주문하기
 
-- 주문하기
-- 주문 목록
+- 주문하기    `POST /orders`
+- 주문 목록   `GET /orders`
 
 ## 질문과 답변
 
