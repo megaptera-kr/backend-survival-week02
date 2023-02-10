@@ -11,9 +11,9 @@
 
 ### 로그인/회원가입
 
-- 로그인 `GET /session`
+- 로그인 `POST /session`
 - 로그아웃 `DELETE /session`
-- 회원가입 `POST /session`
+- 회원가입 `POST /users`
 
 ### 내 정보
 
@@ -33,9 +33,9 @@
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /carts/{carts_id}/products`
-- 장바구니에 상품 삭제 `DELETE /carts/{carts_id}/products/{products_id}`
-- 장바구니 (담긴 상품 목록) `GET /carts/{carts_id}/products`
+- 장바구니에 상품 추가 `POST /cart`
+- 장바구니에 상품 삭제 `DELETE /cart/products/{products_id}`
+- 장바구니 (담긴 상품 목록) `GET /cart`
 
 ### 주문하기
 
