@@ -13,17 +13,20 @@
 
 - 로그인    `POST /session`
 - 로그아웃   `DELETE /session`
-- 회원가입   `POST /users` or `POST /personal`   
 
-### 내 정보
+### 회원가입/내 정보
 
-- 내 정보       `GET /users/{id}` or `GET /personal/{id}`
-- 내 정보 수정   `PATCH /users/{id}` or `PATCH /personal/{id}` -> 개인적이라는 의미를 강조하고자 personal 을 리소스로 사용하고 싶은데,  
-                                                            -> 단수형이라 사용하는 것이 맞는지 의문이 갑니다.. 과제 확인시 이에 대한 의견 말씀해주시면 너무 감사드릴것 같아요!
+- 회원가입       `POST /users` or `POST /personal`   
+- 내 정보       `GET /users/{users_id}` or `GET /personal/{personal_id}`
+- 내 정보 수정   `PATCH /users/{users_id}` or `PATCH /personal/{personal_id}` 
+-> 개인적이라는 의미를 강조하고자 personal 을 리소스로 사용하고 싶은데,  
+-> 단수형이라 사용하는 것이 맞는지 의문이 갑니다.. 과제 확인시 이에 대한 의견 말씀해주시면 너무 감사드릴것 같아요!
+-> 과제에서는 인터셉터를 통해 @RequestAttribute 로 userId 값을 전달받는 것을 가정하였기 때문에 GET, PATCH API id 를 @PathVariable 로 받지 않는 형태로 구현했습니다.
+
 ### 상품
 
 - 상품 목록   `GET /items`
-- 상품 상세   `GET /items/{id}`
+- 상품 상세   `GET /items/{items_id}`
 
 ### 상품 리뷰
 
@@ -34,7 +37,7 @@
 ### 장바구니
 
 - 장바구니에 상품 추가       `POST /baskets`
-- 장바구니에 상품 삭제       `DELETE /baskets/{id}`
+- 장바구니에 상품 삭제       `DELETE /baskets/{baskets_id}`
 - 장바구니 (담긴 상품 목록)   `GET /baskets`
 
 ### 주문하기
