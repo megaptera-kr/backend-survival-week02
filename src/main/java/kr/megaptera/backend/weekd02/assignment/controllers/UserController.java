@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @GetMapping
-    public String userInfo(@RequestAttribute String userId) {
+    public String getUser(@RequestAttribute String userId) {
         return "User: " + userId + " information is loaded";
     }
 
     @PatchMapping
-    public String updateUser(@RequestAttribute String userId, @RequestBody String updatedInfo) {
+    public String updateUser(@RequestAttribute String userId, @RequestBody String updatedUserInfo) {
         return "User: " + userId + " information is updated.";
     }
+
 }

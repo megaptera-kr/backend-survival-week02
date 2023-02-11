@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/carts")
 public class CartController {
 
-    @GetMapping("/products")
-    public String getProductsByCart(@RequestAttribute String userId) {
-        return "Products in User " + userId + " cart is loaded.";
+    @GetMapping
+    public String getCarts(@RequestAttribute String userId) {
+        return "Products in User " + userId + " cart are loaded.";
     }
 
     @PostMapping("/products/{productId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public String addProductByCart(@RequestAttribute String userId, @PathVariable Long productId) {
-        return "Product " + productId + " in User " + userId + " cart is added.";
+    public String addCart(@RequestAttribute String userId, @PathVariable Long productId, @RequestBody String productOptions) {
+        return "Products " + productId + " with options " + productOptions + " in User " + userId + " cart are added.";
     }
 
-    @DeleteMapping("/products/{productId}")
-    public String deleteProductByCart(@RequestAttribute String userId, @PathVariable Long productId) {
-        return "Product " + productId + " in User " + userId + " cart is removed.";
+    @DeleteMapping("/{cartId}")
+    public String deleteCart(@RequestAttribute String userId, @PathVariable Long cartId) {
+        return "Products in Cart " + cartId + " are deleted by User " + userId + ".";
     }
 
 }

@@ -14,8 +14,8 @@ public class OrderController {
     }
 
     @PostMapping
-    public String requestOrder(@RequestAttribute String userId, @RequestBody List<String> products) {
-        return "Products " + products.toString() + " is ordered by User " + userId + ".";
+    public String requestOrder(@RequestAttribute String userId, @RequestBody List<String> carts) {
+        return "Products in carts" + carts.toString() + " are ordered by User " + userId + ".";
     }
-    
+
 }
