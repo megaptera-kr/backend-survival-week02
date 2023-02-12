@@ -11,15 +11,15 @@
 
 ### 로그인/회원가입
 
-- 로그인 `POST /session/login`
-- 로그아웃 `DELETE /session/logout`
+- 로그인 `POST /session`
+- 로그아웃 `DELETE /session`
 - 회원가입 `POST /members`
 
 ### 내 정보
 
-- 내 정보 `GET /members/my-info`
-- 내 정보 수정 `PATCH /members/my-info`
-  - /members뒤에 '/my-info'가 붙었을 때는 HandlerInterceptor를 통해 전달받은 
+- 내 정보 `GET /members/my`
+- 내 정보 수정 `PATCH /members/my`
+  - /members뒤에 '/my'가 붙었을 때는 HandlerInterceptor를 통해 전달받은 
     userId를 사용하려는 목적으로 설계하였습니다. 혹여나 설계상 오류가 있다면 피드백 부탁드리겠습니다.
     
 ### 상품
