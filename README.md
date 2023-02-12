@@ -38,10 +38,9 @@
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /cart/products/{id}`
-    - 아무리 고민해도 nested path를 안쓰고 Rest API로 표기할수 없었다. 일단 쇼핑몰 환경에서 보통 장바구니는 단수로 관리되고, 장바구니내에 담긴 상품이라는 의미로 nested 하게 표시하였다.
-- 장바구니에 상품 삭제 `DELETE /cart/products/{id}`
-- 장바구니 (담긴 상품 목록) `GET /cart/products`
+- 장바구니에 상품 추가 `POST /cart-items/{id}`
+- 장바구니에 상품 삭제 `DELETE /cart-items/{id}`
+- 장바구니 (담긴 상품 목록) `GET /cart-items`
 
 ### 주문하기
 

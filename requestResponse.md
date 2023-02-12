@@ -31,11 +31,11 @@ http DELETE localhost:8080/reviews/2
 
 # 장바구니
 
-http POST localhost:8080/cart/products/1
+http POST localhost:8080/cart-items/1
 
-http DELETE localhost:8080/cart/products/1
+http DELETE localhost:8080/cart-items/1
 
-http GET localhost:8080/cart/products
+http GET localhost:8080/cart-items
 
 # 주문하기
 
