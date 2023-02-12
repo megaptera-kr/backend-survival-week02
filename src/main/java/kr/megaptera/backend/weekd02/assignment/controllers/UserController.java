@@ -4,16 +4,22 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
-    @GetMapping
-    public String getUser(@RequestAttribute String userId) {
-        return "User: " + userId + " information is loaded";
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public String signUpUser(@RequestBody String userInfo) {
+        return "User: " + userInfo + " signup success.";
     }
 
-    @PatchMapping
-    public String updateUser(@RequestAttribute String userId, @RequestBody String updatedUserInfo) {
+    @GetMapping("/me")
+    public String getUser(@RequestAttribute String userId) {
+        return "User: " + userId + " information is loaded.";
+    }
+
+    @PatchMapping("/me")
+    public String updateUser(@RequestAttribute String userId, @RequestBody String userInfo) {
         return "User: " + userId + " information is updated.";
     }
 

@@ -5,23 +5,23 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/carts")
+@RequestMapping("/cart")
 public class CartController {
 
     @GetMapping
     public String getCarts(@RequestAttribute String userId) {
-        return "Products in User " + userId + " cart are loaded.";
+        return "Items to User " + userId + " cart are loaded.";
     }
 
-    @PostMapping("/products/{productId}")
+    @PostMapping("/items/{itemId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public String addCart(@RequestAttribute String userId, @PathVariable Long productId, @RequestBody String productOptions) {
-        return "Products " + productId + " with options " + productOptions + " in User " + userId + " cart are added.";
+    public String addItemToCart(@RequestAttribute String userId, @PathVariable Long itemId) {
+        return "Items " + itemId + " to User " + userId + " cart are added.";
     }
 
-    @DeleteMapping("/{cartId}")
-    public String deleteCart(@RequestAttribute String userId, @PathVariable Long cartId) {
-        return "Products in Cart " + cartId + " are deleted by User " + userId + ".";
+    @DeleteMapping("/items/{itemId}")
+    public String deleteItemToCart(@RequestAttribute String userId, @PathVariable Long itemId) {
+        return "Items to Cart " + itemId + " are deleted by User " + userId + ".";
     }
 
 }

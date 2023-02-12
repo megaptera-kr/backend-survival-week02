@@ -13,12 +13,12 @@
 
 - 로그인 `POST /login`
 - 로그아웃 `POST /logout`
-- 회원가입 `POST /sign-up`
+- 회원가입 `POST /users`
 
 ### 내 정보
 
-- 내 정보 `GET /user`
-- 내 정보 수정 `PATCH /user`
+- 내 정보 `GET /users/me`
+- 내 정보 수정 `PATCH /users/me`
 
 ### 상품
 
@@ -28,14 +28,14 @@
 ### 상품 리뷰
 
 - 상품에 리뷰 작성 `POST /products/{productId}/reviews`
-- 상품에 리뷰 수정 `PUT /products/{productId}/reviews/{reviewId}`
+- 상품에 리뷰 수정 `PATCH /products/{productId}/reviews/{reviewId}`
 - 상품에 리뷰 삭제 `DELETE /products/{productId}/reviews/{reviewId}`
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /carts/products/{productId}`
-- 장바구니에 상품 삭제 `DELETE /carts/{cartId}`
-- 장바구니 (담긴 상품 목록) `GET /carts`
+- 장바구니에 상품 추가 `POST /cart/items`
+- 장바구니에 상품 삭제 `DELETE /cart/items/{itemId}`
+- 장바구니 (담긴 상품 목록) `GET /cart`
 
 ### 주문하기
 

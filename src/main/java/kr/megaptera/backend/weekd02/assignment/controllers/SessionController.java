@@ -16,10 +16,4 @@ public class SessionController {
         return "User: " + userId + " logout success.";
     }
 
-    @PostMapping("/sign-up")
-    @ResponseStatus(HttpStatus.CREATED)
-    public String signUpSubmit(@RequestAttribute String userId) {
-        return "User: " + userId + " signup success.";
-    }
-
 }
