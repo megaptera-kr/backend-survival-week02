@@ -20,12 +20,12 @@ public class UserController {
         return "회원가입 " + userDto + "\n";
     }
 
-    @GetMapping("/my-info")
+    @GetMapping("/my")
     public String detail(@RequestAttribute String userId) {
         return userId + "의 상세 정보\n";
     }
 
-    @PatchMapping("/my-info")
+    @PatchMapping("/my")
     public String update(@RequestAttribute String userId) {
         return userId + "의 정보 수정\n";
     }
