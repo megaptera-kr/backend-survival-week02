@@ -1,7 +1,7 @@
 package kr.megaptera.backend.weekd02.assignment.controllers;
 
-import kr.megaptera.backend.weekd02.assignment.dtos.request.AddProductsRequest;
-import kr.megaptera.backend.weekd02.assignment.dtos.response.AddProductsResponse;
+import kr.megaptera.backend.weekd02.assignment.dtos.request.AddItemsRequest;
+import kr.megaptera.backend.weekd02.assignment.dtos.response.AddItemsResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,24 +17,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cart")
 public class CartController {
 
-  @PostMapping
+  @PostMapping("/items")
   @ResponseStatus(HttpStatus.CREATED)
-  public AddProductsResponse addProducts(@RequestAttribute Long userId,
-      @RequestBody AddProductsRequest request) {
+  public AddItemsResponse addItems(@RequestAttribute Long userId,
+      @RequestBody AddItemsRequest request) {
 
-    return new AddProductsResponse(request.getProductIds());
+    return new AddItemsResponse(request.getProductIds());
   }
 
-  @DeleteMapping("/products/{productsId}")
+  @DeleteMapping("/items/{itemsId}")
   public String deleteProduct(@RequestAttribute Long userId,
-      @PathVariable Long productsId) {
+      @PathVariable Long itemsId) {
 
-    return "삭제 성공: " + productsId;
+    return "삭제 성공: " + itemsId;
   }
 
   @GetMapping
   public String getCartList(@RequestAttribute Long userId) {
-    return "productIds: " + "1, 2, 3";
+    return "itemIds: " + "1, 2, 3";
   }
 
 }

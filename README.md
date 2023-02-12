@@ -33,9 +33,12 @@
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /cart`
-- 장바구니에 상품 삭제 `DELETE /cart/products/{products_id}`
+- 장바구니에 상품 추가 `POST /cart/items`
+- 장바구니에 상품 삭제 `DELETE /cart/items/{items_id}`
 - 장바구니 (담긴 상품 목록) `GET /cart`
+- `피드백 수정사항 : 장바구니에 상품을 추가해야지 라고 products 리소스가 장바구니에서도 같다고 생각하지 말 것`
+- `평범한 상품에 각종 옵션과 갯수 등이 포함되어 계산서에 적히므로 products 리소스와는 다른 리소스로 봐야 한다.`
+- `따라서 /cart/products(X) -> /cart/items로 수정하였습니다.`
 
 ### 주문하기
 

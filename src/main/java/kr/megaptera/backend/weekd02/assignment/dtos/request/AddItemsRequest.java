@@ -2,13 +2,13 @@ package kr.megaptera.backend.weekd02.assignment.dtos.request;
 
 import java.util.List;
 
-public class AddProductsRequest {
+public class AddItemsRequest {
   private List<Long> productIds;
 
-  public AddProductsRequest() {
+  public AddItemsRequest() {
   }
 
-  public AddProductsRequest(List<Long> productIds) {
+  public AddItemsRequest(List<Long> productIds) {
     this.productIds = productIds;
   }
 
