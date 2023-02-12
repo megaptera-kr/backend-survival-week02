@@ -11,16 +11,17 @@
 
 ### 로그인/회원가입
 
-- 로그인 `POST /members/login`
-- 로그아웃 `DELETE /members/logout`
+- 로그인 `POST /session/login`
+- 로그아웃 `DELETE /session/logout`
 - 회원가입 `POST /members`
 
 ### 내 정보
 
-- 내 정보 `GET /members/myinfo`
-- 내 정보 수정 `PATCH /members/myinfo`
-  - /members/뒤에 'myinfo'가 붙었을 때는 HandlerInterceptor를 통해 전달받은 
+- 내 정보 `GET /members/my-info`
+- 내 정보 수정 `PATCH /members/my-info`
+  - /members뒤에 '/my-info'가 붙었을 때는 HandlerInterceptor를 통해 전달받은 
     userId를 사용하려는 목적으로 설계하였습니다. 혹여나 설계상 오류가 있다면 피드백 부탁드리겠습니다.
+    
 ### 상품
 
 - 상품 목록 `GET /items`
@@ -28,16 +29,22 @@
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성 `POST /items/{item_id}/review`
-- 상품에 리뷰 수정 `PATCH /items/{item_id}/review/{id}`
-- 상품에 리뷰 삭제 `DELETE /items/{item_id}/review/{id}`
-
+- 상품에 리뷰 작성 `POST /reviews/{orderNo}`
+- 상품에 리뷰 수정 `PATCH /reviews/{id}`
+- 상품에 리뷰 삭제 `DELETE /reviews/{id}`
+  - 상품 리소스와 연관되지만 nested path를 지양하기 위해 별도의 리소스로 구성하였습니다.
+  - 내가 주문을 완료한 상품에 대해서만 리뷰를 작성할 수 있기 때문에 리뷰 작성 시
+    주문번호(orderNo)를 파라미터로 넘기도록 하는게 자연스러울 것이라고 판단하였습니다. 
+    
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /baskets`
-- 장바구니에 상품 삭제 `DELETE /baskets/{id}`
-- 장바구니 (담긴 상품 목록) `GET /baskets`
-
+- 장바구니에 상품 추가 `POST /cart-items`
+- 장바구니에 상품 삭제 `DELETE /cart-items/{id}`
+- 장바구니 (담긴 상품 목록) `GET /cart-items`
+  - 장바구니는 사용자가 자신의 장바구니만 볼 수 있고 한 사용자당 1개씩 존재하기 때문에
+    /cart-items로 설계하였습니다. /members/my-info/cart-items로 해도 말이 되는것처럼 보이나,
+    '내 정보'라는 개념과는 분리해서 별도의 리소스로 가져가는게 맞다고 판단하였습니다.
+    
 ### 주문하기
 
 - 주문하기 `POST /orders`
