@@ -2,13 +2,6 @@
 
 ## REST API 설계
 
-### 예시
-
-- 게시글 조회 `GET /posts`
-- 게시글 작성 `POST /posts`
-- 게시글 수정 `PATCH /posts/{id}`
-- 게시글 삭제 `DELETE /posts/{id}`
-
 ### 로그인/회원가입
 
 - 로그인    `POST /session`
@@ -16,29 +9,30 @@
 
 ### 회원가입/내 정보
 
-- 회원가입       `POST /users` or `POST /personal`   
-- 내 정보       `GET /users/{users_id}` or `GET /personal/{personal_id}`
-- 내 정보 수정   `PATCH /users/{users_id}` or `PATCH /personal/{personal_id}` 
--> 개인적이라는 의미를 강조하고자 personal 을 리소스로 사용하고 싶은데,  
--> 단수형이라 사용하는 것이 맞는지 의문이 갑니다.. 과제 확인시 이에 대한 의견 말씀해주시면 너무 감사드릴것 같아요!
--> 과제에서는 인터셉터를 통해 @RequestAttribute 로 userId 값을 전달받는 것을 가정하였기 때문에 GET, PATCH API id 를 @PathVariable 로 받지 않는 형태로 구현했습니다.
+- 회원가입       `POST /users`
+- 내 정보       `GET /users/me`
+- 내 정보 수정   `PATCH /users/me`
 
 ### 상품
 
 - 상품 목록   `GET /items`
-- 상품 상세   `GET /items/{items_id}`
+- 상품 상세   `GET /items/{item_id}`
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성   `POST /items/{items_id}/comments`
-- 상품에 리뷰 수정   `PATCH /items/{items_id}/comments/{comments_id}`
-- 상품에 리뷰 삭제   `DELETE /items/{items_id}/comments/{comments_id}`
+- 상품에 리뷰 작성   `POST /items/{item_id}/comments` 
+- 상품에 리뷰 수정   `PATCH /items/{item_id}/comments/{comment_id}`
+- 상품에 리뷰 삭제   `DELETE /items/{item_id}/comments/{comment_id}`
 
 ### 장바구니
 
-- 장바구니에 상품 추가       `POST /baskets`
-- 장바구니에 상품 삭제       `DELETE /baskets/{baskets_id}`
-- 장바구니 (담긴 상품 목록)   `GET /baskets`
+- 장바구니에 상품 추가       `POST /basket/basket_items`
+- 장바구니에 상품 삭제       `DELETE /basket/basket_items{basket_item_id}`
+- 장바구니 (담긴 상품 목록)   `GET /basket`
+-> 상품과 장바구니 안에 담긴 상품은 완전히 다른 리소스이다.
+-> 장바구니에 담는 상품의 경우 옵션에 대한 정보가 무조건 적으로 들어간다.
+-> REST, 도메인을 다룰 때, 관계가 있어보이만 사실은 완전히 다른 것을 잘 구분해야 한다.
+ex) 온라인 쇼핑몰에 올라온 상품 / 장바구니에 담긴 상품
 
 ### 주문하기
 
