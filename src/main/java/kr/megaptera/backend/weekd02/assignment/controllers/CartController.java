@@ -9,7 +9,7 @@ import java.util.List;
 @RequestMapping("/cart")
 public class CartController {
     private static final List<String> itemList = new ArrayList<>();
-    @PostMapping
+    @PostMapping("/items")
     @ResponseStatus(HttpStatus.OK)
     public String addCart(@RequestParam String itemName){
         itemList.add(itemName);
@@ -24,15 +24,15 @@ public class CartController {
         return message;
     }
 
-    @DeleteMapping
+    @DeleteMapping("/items/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public String removeItem(@RequestParam int idx){
+    public String removeItem(@PathVariable int id){
         if (itemList.size() == 0) {
             return "장바구니가 비어 있습니다.";
         }
 
-        String message = "장바구니에 상품 삭제\n 제거된 상품번호 : " + idx + " 상품명 : " +itemList.get(idx);
-        itemList.remove(idx);
+        String message = "장바구니에 상품 삭제\n 제거된 상품번호 : " + id + " 상품명 : " +itemList.get(id);
+        itemList.remove(id);
 
         return message;
     }

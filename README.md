@@ -33,8 +33,8 @@
 f
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /products/{productId}/cart`
-- 장바구니에 상품 삭제 `DELETE /products/{productId}/cart/{id}`
+- 장바구니에 상품 추가 `POST /cart/items`
+- 장바구니에 상품 삭제 `DELETE /cart/items/{id}`
 - 장바구니 (담긴 상품 목록) `GET /cart`
 
 ### 주문하기
