@@ -11,8 +11,8 @@
 
 ### 로그인/회원가입
 
-- 로그인 `POST /login`
-- 로그아웃 `POST /logout`
+- 로그인 `POST /session`
+- 로그아웃 `DELETE /session`
 - 회원가입 `POST /users`
 
 ### 내 정보
@@ -45,9 +45,11 @@
 ## 질문과 답변
 
 > 화면 URL과 API의 URL이 일치해야 할까? 달라야 한다면 그 이유는 무엇일까?  
-> -> 다르게 가져가야한다. 화면 URL의 경우, 사용자에게 공개가 된 URL이다.  
-URL을 일치시키게 되면, 사용자가 악의적인 목적으로 트래픽을 발생시킬 수 있는 빌미를 제공해준다.  
-Frontend 모듈의 화면 URL 호출 시, 그에 따른 Backend API URL 호출을 올바르게 할 수 있도록 구현되어야한다.
+> -> Frontend Module과 Backend Module을 서로 다르게 가져간다 가정했을 때 Backend Module API의 URL을 여러 곳에서 사용한다면, 다르게 가져가도 무방하다.  
+그리고, Frontend Module의 단일 페이지 애플리케이션(Single Page Application, SPA)에서는 같은 Backend Module API를 여러 번 호출하거나,  
+여러 Backend Module API들을 순서에 맞춰 호출해야하는 상황이 올 수 있다.  
+이때, Collection Pattern을 잘 이용하여 API URL만 보고 어떤 동작인지 대략적인 유추가 가능하도록 설계해야 한다.  
+또한, API 호출이 인가되지 않은 사용자에게 무분별하게 이루어지지 않도록 그에 따른 보안설정도 철저하게 구성해야 한다.
 
 > 서버는 API 요청을 받을 때 사용자가 누구인지 어떻게 알 수 있을까?  
 > -> 로그인이 이루어진 세션을 통해 확인 가능하다.

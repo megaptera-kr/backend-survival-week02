@@ -1,17 +1,17 @@
 package kr.megaptera.backend.weekd02.assignment.controllers;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/session")
 public class SessionController {
 
-    @PostMapping("/login")
+    @PostMapping
     public String login(@RequestAttribute String userId) {
         return "User: " + userId + " login success.";
     }
 
-    @PostMapping("/logout")
+    @DeleteMapping
     public String logout(@RequestAttribute String userId) {
         return "User: " + userId + " logout success.";
     }
