@@ -13,7 +13,6 @@ public class ExampleController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
     public String create(
         @PathVariable String postId,
         @RequestAttribute String userId,
