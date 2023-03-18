@@ -4,19 +4,15 @@ import kr.megaptera.backend.weekd02.assignment.exceptions.NotFoundException;
 import kr.megaptera.backend.weekd02.assignment.models.AddProductRequest;
 import kr.megaptera.backend.weekd02.assignment.models.Product;
 import kr.megaptera.backend.weekd02.assignment.services.ProductManager;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
+@RequiredArgsConstructor
 public class ProductController {
     private final ProductManager productManager;
-
-    @Autowired
-    public ProductController(ProductManager productManager) {
-        this.productManager = productManager;
-    }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -59,6 +55,8 @@ public class ProductController {
         if(!productManager.isExist(id)){
             throw new NotFoundException();
         }
+
+        // TODO : (dh) if exist review, this method throw error.
 
         productManager.remove(id);
     }

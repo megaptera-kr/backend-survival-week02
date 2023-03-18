@@ -15,6 +15,8 @@ public class ProductManager {
     public ProductManager() {
         idCounter = 0;
         products = new HashMap<>();
+
+        add(new AddProductRequest("demo product"));
     }
 
     public boolean isExist(long id) {
