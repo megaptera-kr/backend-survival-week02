@@ -35,11 +35,11 @@
 ### 상품 리뷰
 
 - 상품에 리뷰 작성
-  - `POST /reviews`
+  - `POST /products/{productId}/reviews`
 - 상품에 리뷰 수정
-  - `PATCH /reviews/{reviewId}`
+  - `PATCH /products/{productId}/reviews/{reviewId}`
 - 상품에 리뷰 삭제
-  - `DELETE /reviews/{reviewId}`
+  - `DELETE /products/{productId}/reviews/{reviewId}`
 
 ### 장바구니
 
