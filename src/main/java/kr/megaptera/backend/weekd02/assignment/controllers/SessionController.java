@@ -13,6 +13,7 @@ public class SessionController {
     }
 
     @PostMapping("/logout")
+    @ResponseStatus(HttpStatus.CREATED)
     private String logoutUser(@RequestAttribute String userId) {
         return "'" + userId + "'" + "님 로그아웃 입니다.";
     }
