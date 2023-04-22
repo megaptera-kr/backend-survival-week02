@@ -22,14 +22,14 @@
 
 ### 상품
 
-- 상품 목록 `GET /items`
-- 상품 상세 `GET /items/{id}`
+- 상품 목록 `GET /products`
+- 상품 상세 `GET /products/{id}`
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성 `POST /items/{item_id}/reviews`
-- 상품에 리뷰 수정 `PUT /items/{item_id}/reviews/{id}`
-- 상품에 리뷰 삭제 `DELETE /items/{item_id}/reviews/{id}`
+- 상품에 리뷰 작성 `POST /products/{product_id}/reviews`
+- 상품에 리뷰 수정 `PUT /products/{product_id}/reviews/{id}`
+- 상품에 리뷰 삭제 `DELETE /products/{product_id}/reviews/{id}`
 
 ### 장바구니
 
