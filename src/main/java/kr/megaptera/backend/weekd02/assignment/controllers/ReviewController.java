@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,14 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/products/{productId}/reviews")
 public class ReviewController {
     @PostMapping()
-    private String createReview(@PathVariable Long productId) {
+    private String createReview(
+        @PathVariable Long productId,
+        @RequestAttribute String userId
+    ) {
         return "상품 리뷰 작성";
     }
 
     @DeleteMapping("/{reviewId}")
     private String deleteReview(
         @PathVariable Long productId,
-        @PathVariable Long reviewId
+        @PathVariable Long reviewId,
+        @RequestAttribute String userId
     ) {
         return "상품 리뷰 삭제" + reviewId + "\n";
     }
@@ -28,6 +33,7 @@ public class ReviewController {
     private String updateReview(
         @PathVariable Long productId,
         @PathVariable Long reviewId,
+        @RequestAttribute String userId,
         @RequestBody String reviewDto
     ) {
         return "상품 리뷰 수정" + reviewDto + "\n";
