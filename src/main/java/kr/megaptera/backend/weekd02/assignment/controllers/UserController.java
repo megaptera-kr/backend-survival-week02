@@ -34,7 +34,7 @@ public class UserController {
 
     // 자신의 정보 수정하기
     @PatchMapping("/me")
-    public String patchMyInfo(
+    public String updateMyInfo(
             @RequestAttribute String userId,
             @RequestBody String userDTO
     ) {
