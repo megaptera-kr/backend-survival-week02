@@ -39,8 +39,8 @@
 
 ### 주문하기
 
-- 주문하기 `POST /order`
-- 주문 목록 `GET /order`
+- 주문하기 `GET /orders/cart`
+- 주문 목록 `GET /orders/me`
 
 ## 질문과 답변
 
