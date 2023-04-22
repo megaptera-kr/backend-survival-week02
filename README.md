@@ -27,7 +27,7 @@
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성 `POST /products/{product_id}/reviews`
+- 상품에 리뷰 작성 `POST /products/{product_id}/reviews/{id}`
 - 상품에 리뷰 수정 `PUT /products/{product_id}/reviews/{id}`
 - 상품에 리뷰 삭제 `DELETE /products/{product_id}/reviews/{id}`
 
