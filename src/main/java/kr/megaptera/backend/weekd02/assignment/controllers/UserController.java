@@ -23,7 +23,8 @@ public class UserController {
             @RequestAttribute String userId,
             @RequestBody String userDTO
     ) {
-        return userId + "님의 회원 가입을 축하합니다.\n";
+        return userId + "님의 회원 가입을 축하합니다.\n\n"
+                + userDTO + "\n";
     }
 
     // 자신의 정보 얻기
@@ -39,7 +40,7 @@ public class UserController {
             @RequestBody String userDTO
     ) {
         return userId + "님의 정보를 요청 내용으로 수정합니다.\n\n"
-                + userDTO;
+                + userDTO + "\n";
     }
 
     // Exception handling (POST, PATCH 시 body가 없는 경우 대응)

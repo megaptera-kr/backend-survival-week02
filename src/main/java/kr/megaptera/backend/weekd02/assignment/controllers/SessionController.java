@@ -25,7 +25,7 @@ public class SessionController {
         // userDTO로 들어온 userId와 password가 일치하면 로그인 성공
 
         return userId + "번 고객님께서 로그인하셨습니다.\n\n"
-                + loginDTO;
+                + loginDTO + "\n";
     }
 
     // 로그아웃하기 (세션 파기하기)
