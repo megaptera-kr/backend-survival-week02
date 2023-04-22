@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/orders")
 public class OrderController {
     @GetMapping
-    private String orders() {
+    private String orders(@RequestAttribute String userId) {
         return "주문 목록";
     }
 
