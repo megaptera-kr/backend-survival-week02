@@ -18,12 +18,12 @@ public class CartController {
         return "장바구니 목록\n";
     }
 
-    @PostMapping()
+    @PostMapping("/{productId}")
     public String insertCart(
         @RequestAttribute String userId,
-        @RequestBody String productDTO
+        @PathVariable String productId
     ){
-        return "장바구니에" + productDTO + " 상품 추가 \n";
+        return "장바구니에" + productId + " 상품 추가 \n";
     }
 
     @DeleteMapping("/{cartId}/{productId}")
