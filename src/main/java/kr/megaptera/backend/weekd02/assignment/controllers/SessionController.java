@@ -1,7 +1,9 @@
 package kr.megaptera.backend.weekd02.assignment.controllers;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,5 +33,12 @@ public class SessionController {
             @RequestAttribute("userId") String userId
     ) {
         return userId + "번 고객님께서 성공적으로 로그아웃하셨습니다.\n";
+    }
+
+    // Exception handling (POST, PATCH 시 body가 없는 경우 대응)
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String badRequest() {
+        return "해당 요청 시에는 요청 내용 전송이 필요합니다.\n";
     }
 }
