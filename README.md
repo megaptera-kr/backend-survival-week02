@@ -23,7 +23,7 @@
 ### 상품
 
 - 상품 목록 `GET /products`
-- 상품 상세 `GET /products/{id}`
+- 상품 상세 `GET /products/{product_id}`
 
 ### 상품 리뷰
 
