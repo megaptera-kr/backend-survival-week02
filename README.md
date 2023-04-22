@@ -11,36 +11,36 @@
 
 ### 로그인/회원가입
 
-- 로그인
-- 로그아웃
-- 회원가입
+- 로그인 `GET /session`
+- 로그아웃 `DELETE /session`
+- 회원가입 `POST /session`
 
 ### 내 정보
 
-- 내 정보 
-- 내 정보 수정 
+- 내 정보 `GET /profile`
+- 내 정보 수정 `PUT /profile`
 
 ### 상품
 
-- 상품 목록
-- 상품 상세
+- 상품 목록 `GET /items`
+- 상품 상세 `GET /items/{id}`
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성
-- 상품에 리뷰 수정
-- 상품에 리뷰 삭제
+- 상품에 리뷰 작성 `POST /items/{item_id}/reviews`
+- 상품에 리뷰 수정 `PUT /items/{item_id}/reviews/{id}`
+- 상품에 리뷰 삭제 `DELETE /items/{item_id}/reviews/{id}`
 
 ### 장바구니
 
-- 장바구니에 상품 추가
-- 장바구니에 상품 삭제
-- 장바구니 (담긴 상품 목록)
+- 장바구니에 상품 추가 `POST /carts`
+- 장바구니에 상품 삭제 `DELETE /carts/{id}`
+- 장바구니 (담긴 상품 목록) `GET /carts`
 
 ### 주문하기
 
-- 주문하기
-- 주문 목록
+- 주문하기 `POST /orders`
+- 주문 목록 `GET /orders`
 
 ## 질문과 답변
 
