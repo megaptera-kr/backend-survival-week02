@@ -17,8 +17,8 @@
 
 ### 내 정보
 
-- 내 정보 `GET /login`
-- 내 정보 수정 `PUT /login`
+- 내 정보 `GET /users/me` - me에 대한 api문서 작성
+- 내 정보 수정 `PUT /users/me`
 
 ### 상품
 
@@ -33,20 +33,21 @@
 
 ### 장바구니
 
-- 장바구니에 상품 추가  `POST /login/baskets/goods` - 내 장바구니에 제품 추가
-- 장바구니에 상품 삭제  `DELETE /login/baskets/goods/{good_id}` - 내 장바구니에서 제품 삭제
-- 장바구니 (담긴 상품 목록) `GET /login/baskets` - 내 장바구니 확인
+- 장바구니에 상품 추가  `POST /baskets/goods/{good_id}` - 내 장바구니에 제품 추가
+- 장바구니에 상품 삭제  `DELETE /baskets/goods/{good_id}` - 내 장바구니에서 제품 삭제
+- 장바구니 (담긴 상품 목록) `GET baskets` - 내 장바구니 확인
 
 ### 주문하기
 
-- 주문하기  `POST /login/orders` - 내 주문 추가
-- 주문 목록 `GET /login/orders` - 내 주문 전체 조회
+- 주문하기  `POST /orders` - 내 주문 추가
+- 주문 목록 `GET /orders` - 내 주문 전체 조회
 
 ## 질문과 답변
 
 > 화면 URL과 API의 URL이 일치해야 할까? 달라야 한다면 그 이유는 무엇일까?
 
+
 > 서버는 API 요청을 받을 때 사용자가 누구인지 어떻게 알 수 있을까?<br>
-로그인이 되어있는 상태여야 하기 때문에 쿠키나 세션에서 확인 할 수 있다.
+토큰에서 로그인 정보를 확인한다.
 
 > API 요청으로 다른 사람의 정보를 함부로 볼 수 없게 하려면 어떻게 해야 할까?
