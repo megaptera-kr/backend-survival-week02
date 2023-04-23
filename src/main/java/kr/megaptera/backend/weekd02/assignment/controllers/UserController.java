@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("users")
 public class UserController {
-    @GetMapping
+    
+    @GetMapping("/{id}")
     public String detail(@RequestAttribute String userId) {
         return "내 정보 조회: " + userId + "\n";
     }
