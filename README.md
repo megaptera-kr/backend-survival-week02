@@ -11,41 +11,46 @@
 
 ### 로그인/회원가입
 
-- 로그인
-- 로그아웃
-- 회원가입
+- 로그인 POST /login
+- 로그아웃 DELETE /logout
+- 회원가입 POST /users/join
 
 ### 내 정보
 
-- 내 정보 
-- 내 정보 수정 
+- 내 정보 GET /users/my
+- 내 정보 수정 PATCH /users/my
 
 ### 상품
 
-- 상품 목록
-- 상품 상세
+- 상품 목록 GET /products
+- 상품 상세 GET /products/{id}
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성
-- 상품에 리뷰 수정
-- 상품에 리뷰 삭제
+- 상품에 리뷰 작성 POST /products/{pid}/reviews
+- 상품에 리뷰 수정 POST /products/{pid}/reviews
+- 상품에 리뷰 삭제 DELETE /products/{pid}/reviews/{rid}
++ 리뷰 리스트 GET /products/{pid}/reviews
 
 ### 장바구니
 
-- 장바구니에 상품 추가
-- 장바구니에 상품 삭제
-- 장바구니 (담긴 상품 목록)
+- 장바구니에 상품 추가 POST /cart/items
+- 장바구니에 상품 삭제 DELETE /cart/items/{id}
+- 장바구니 (담긴 상품 목록) GET /cart
++ 카트 리스트 GET /cart
 
 ### 주문하기
 
-- 주문하기
-- 주문 목록
+- 주문하기 POST /orders
+- 주문 목록 GET /orders
 
 ## 질문과 답변
 
 > 화면 URL과 API의 URL이 일치해야 할까? 달라야 한다면 그 이유는 무엇일까?
+* 일치하지 않아도 괜찮습니다. 화면 하나에 다수의 api를 사용하는 경우에는 url을 의도적으로 다르게 하기도 합니다.
 
 > 서버는 API 요청을 받을 때 사용자가 누구인지 어떻게 알 수 있을까?
+* 전송 시 사용되는 토큰 등을 이용합니다.
 
 > API 요청으로 다른 사람의 정보를 함부로 볼 수 없게 하려면 어떻게 해야 할까?
+* 직접적인 요청으로 바로 접근 가능하게 하면x 사용자 별로 인증하는 기능을 api에 넣어둡니다.
