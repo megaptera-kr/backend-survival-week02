@@ -1,0 +1,62 @@
+POST localhost:8080/login/
+
+{
+   "userId" : "DYKIM"
+}
+
+###
+
+DELETE  localhost:8080/login/
+
+
+###
+POST localhost:8080/users
+
+{
+    "userId": "DYKIM",
+    "name" : "DAEYEONG"
+
+}
+
+###
+GET localhost:8080/users/
+
+###
+PUT localhost:8080/users
+
+{
+    "userId" : "DYKIM9866",
+    "name" : "DAEYOUNG"
+}
+
+###
+GET localhost:8080/goods
+
+###
+GET  localhost:8080/goods/2
+
+###
+POST localhost:8080/goods/3/reviews
+
+{
+    "리뷰내용" : "진짜 너무 안좋아요;"
+}
+
+###
+PATCH  localhost:8080/goods/3/reviews/5
+
+{
+    "리뷰내용" : "대처가 빨라요!"
+}
+
+###
+DELETE  localhost:8080/goods/3/reviews/5
+
+###
+GET  localhost:8080/baskets
+
+###
+POST  localhost:8080/baskets/goods/1
+
+###
+DELETE  localhost:8080/baskets/goods/1
