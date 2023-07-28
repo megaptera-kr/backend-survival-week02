@@ -22,12 +22,14 @@ class SessionControllerTest {
     @Test
     void login() throws Exception {
         // Given
+        String userId = "1";
+
         // When // Then
         mockMvc.perform(
                         post("/session")
                 )
                 .andDo(print())
-                .andExpect(content().string("로그인: 1"))
+                .andExpect(content().string("로그인: " + userId))
                 .andExpect(status().isOk());
 
     }
@@ -36,12 +38,14 @@ class SessionControllerTest {
     @Test
     void logout() throws Exception {
         // Given
+        String userId = "1";
+
         // When // Then
         mockMvc.perform(
                         delete("/session")
                 )
                 .andDo(print())
-                .andExpect(content().string("로그아웃: 1"))
+                .andExpect(content().string("로그아웃: " + userId))
                 .andExpect(status().isOk());
     }
 }

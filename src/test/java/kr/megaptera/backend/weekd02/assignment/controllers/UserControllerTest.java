@@ -23,12 +23,14 @@ class UserControllerTest {
     @Test
     void join() throws Exception {
         // Given
+        String userId = "1";
+
         // When // Then
         mockMvc.perform(
                         post("/users")
                 )
                 .andDo(print())
-                .andExpect(content().string("회원가입: 1"))
+                .andExpect(content().string("회원가입: " + userId))
                 .andExpect(status().isCreated());
     }
 
@@ -36,12 +38,14 @@ class UserControllerTest {
     @Test
     void getMe() throws Exception {
         // Given
+        String userId = "1";
+
         // When // Then
         mockMvc.perform(
                         get("/users/me")
                 )
                 .andDo(print())
-                .andExpect(content().string("내 정보 보기: 1"))
+                .andExpect(content().string("내 정보 보기: " + userId))
                 .andExpect(status().isOk());
     }
 
@@ -49,12 +53,14 @@ class UserControllerTest {
     @Test
     void updateMe() throws Exception {
         // Given
+        String userId = "1";
+
         // When // Then
         mockMvc.perform(
                         patch("/users/me")
                 )
                 .andDo(print())
-                .andExpect(content().string("내 정보 수정: 1"))
+                .andExpect(content().string("내 정보 수정: " + userId))
                 .andExpect(status().isOk());
     }
 }
