@@ -27,7 +27,7 @@
 ### 장바구니
 
 - 장바구니에 상품 추가 `POST /cart`
-- 장바구니에 상품 삭제 `DELETE /cartItem/{cart_item_id}`
+- 장바구니에 상품 삭제 `DELETE /cartItems/{cart_item_id}`
 - 장바구니 (담긴 상품 목록) `GET /cart`
 
 ### 주문하기
