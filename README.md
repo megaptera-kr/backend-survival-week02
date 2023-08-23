@@ -4,43 +4,43 @@
 
 ### 예시
 
-- 게시글 조회 `GET /posts`
-- 게시글 작성 `POST /posts`
-- 게시글 수정 `PATCH /posts/{id}`
-- 게시글 삭제 `DELETE /posts/{id}`
+- 게시글 조회               `GET /posts`
+- 게시글 작성               `POST /posts`
+- 게시글 수정               `PATCH /posts/{id}`
+- 게시글 삭제               `DELETE /posts/{id}`
 
 ### 로그인/회원가입
 
-- 로그인
-- 로그아웃
-- 회원가입
+- 로그인                    `POST /session`
+- 로그아웃                  `DELETE /session`
+- 회원가입                  `POST /users`
 
 ### 내 정보
 
-- 내 정보 
-- 내 정보 수정 
+- 내 정보                   `GET /users/{userid}`
+- 내 정보 수정              `PATCH /users/{userid}`
 
 ### 상품
 
-- 상품 목록
-- 상품 상세
+- 상품 목록                 `GET /products`
+- 상품 상세                 `GET /products/{productid}`
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성
-- 상품에 리뷰 수정
-- 상품에 리뷰 삭제
+- 상품에 리뷰 작성          `POST /products/{productid}/reviews`
+- 상품에 리뷰 수정          `GET /products/{productid}/reviews/{reviewid}`
+- 상품에 리뷰 삭제          `DELETE /products/{productid}/reviews/{reviewid}`
 
 ### 장바구니
 
-- 장바구니에 상품 추가
-- 장바구니에 상품 삭제
-- 장바구니 (담긴 상품 목록)
+- 장바구니에 상품 추가      `POST /users/{userid}/carts`
+- 장바구니에 상품 삭제      `DELETE /users/{userid}/carts/{cartid}`
+- 장바구니 (담긴 상품 목록) `GET /users/{userid}/carts`
 
 ### 주문하기
 
-- 주문하기
-- 주문 목록
+- 주문하기                  `POST /users/{userid}/orders/{orderid}`
+- 주문 목록                 `GET /users/{userid}/orders`
 
 ## 질문과 답변
 
