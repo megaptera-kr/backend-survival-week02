@@ -20,8 +20,7 @@ public class SessionController {
     @ResponseStatus(HttpStatus.OK)
     public String create(@RequestBody String id){
         // Login
-
-        return "로그인 성공" + id;
+        return "로그인 성공 \n" + id;
     }
 
     @DeleteMapping("/{id}")

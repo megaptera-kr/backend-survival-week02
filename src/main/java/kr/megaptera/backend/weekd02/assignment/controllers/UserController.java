@@ -15,43 +15,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    @GetMapping
-    public String list() {
-        return "유저 목록\n";
+    // 1. 정보 조회 (GET localhost:8080/users/me)
+    @GetMapping("me")
+    public String read(@RequestAttribute String id) {
+
+        return id + "님의 정보\n";
     }
 
-    @GetMapping("/{user_id}")
-    public String read(@PathVariable("user_id") String user_id) {
-
-        return "로그인 성공\n";
-    }
-
-    // 1. 회원가입 (POST users/{user_id})
+    // 2. 회원 가입 (POST localhost:8080/users id = "" age ="")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public String create(
-            @RequestAttribute String userId
+        public String create(
+                @RequestBody String body
     ) {
-        return "로그인 : " + userId + "\n";
+            return "{\"action\" : \"회원가입\", \"body\" : \"" + body.replace("\"", "\\\"") + "\"}";
     }
 
-    @PatchMapping("/{id}")
+    // 3. 내 정보 수정 (PATCH localhost:8080/users/me age="")
+    @PatchMapping("/me")
     public String update(
-            @PathVariable String postId,
-            @PathVariable String id,
-            @RequestAttribute String userId,
-            @RequestBody String commentDTO
-
+            @RequestAttribute String id,
+            @RequestBody String body
     ) {
-        return "댓글 수정" + commentDTO + "\n";
+        return id + "님의 정보 수정\n";
     }
 
-    @DeleteMapping("/{id}")
-    public String delete(
-            @PathVariable String postId,
-            @PathVariable String id,
-            @RequestAttribute String userId
-    ) {
-        return "댓글 삭제" + id + "\n";
-    }
 }
