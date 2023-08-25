@@ -33,9 +33,9 @@
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /basket-products`
-- 장바구니에 상품 삭제 `DELETE /basket-products/{id}`
-- 장바구니 (담긴 상품 목록) `GET /basket-products`
+- 장바구니에 상품 추가 `POST /cart-products`
+- 장바구니에 상품 삭제 `DELETE /cart-products/{id}`
+- 장바구니 (담긴 상품 목록) `GET /cart-products`
 
 ### 주문하기
 
