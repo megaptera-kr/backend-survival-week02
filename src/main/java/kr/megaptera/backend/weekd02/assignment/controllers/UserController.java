@@ -25,8 +25,8 @@ public class UserController {
     // 2. 회원 가입 (POST localhost:8080/users id = "" age ="")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-        public String create(
-                @RequestBody String body
+    public String create(
+            @RequestBody String body
     ) {
             return "{\"action\" : \"회원가입\", \"body\" : \"" + body.replace("\"", "\\\"") + "\"}";
     }
