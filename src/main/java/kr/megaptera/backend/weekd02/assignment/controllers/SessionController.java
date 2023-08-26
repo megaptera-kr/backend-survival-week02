@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/session")
 public class SessionController {
+    // 로그인
     @PostMapping
     public String create(@RequestBody String sessionDTO) {
         return "로그인\n";
     }
 
+    // 로그아웃
     @DeleteMapping
     public String delete(@RequestAttribute String userId) {
         return "로그아웃\n";
