@@ -23,7 +23,7 @@ public class UserController {
     }
 
     //내 정보 수정
-    @PatchMapping("/me1")
+    @PatchMapping("/me")
     public String updateMyInfo(@RequestBody String userForm, @RequestAttribute String userId)
     {
         return "내 정보 수정: " + userId + "\n" +  userForm + "\n";

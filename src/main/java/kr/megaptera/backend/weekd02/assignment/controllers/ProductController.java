@@ -17,7 +17,7 @@ public class ProductController {
 
     //상품 상세 조회
     @GetMapping("/{productId}")
-    public String getProduct(@PathVariable("productId") String productId)
+    public String getProduct(@PathVariable String productId)
     {
         return "상품 상세 조회: " + productId + "\n";
     }

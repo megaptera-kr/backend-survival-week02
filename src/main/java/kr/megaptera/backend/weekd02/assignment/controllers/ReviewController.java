@@ -20,28 +20,28 @@ public class ReviewController {
     @ResponseStatus(HttpStatus.CREATED)
     public String createReview(
             @RequestBody String reviewForm,
-            @PathVariable("productId") String productId,
-            @RequestAttribute("userId") String userId) {
+            @PathVariable String productId,
+            @RequestAttribute String userId) {
         return productId + " 상품의 리뷰 작성: " + userId + "\n" + reviewForm + "\n";
     }
 
     //상품에 리뷰 수정
-    @PatchMapping("{id}")
+    @PatchMapping("{reviewId}")
     public String updateReview(
             @RequestBody String reviewForm,
-            @PathVariable("productId") String productId,
-            @RequestAttribute("userId") String userId,
-            @PathVariable("reviewId") String reviewId) {
+            @PathVariable String productId,
+            @RequestAttribute String userId,
+            @PathVariable String reviewId) {
         return productId + " 상품에 리뷰 수정: " + userId + "\n"
                 + "제품 번호: " + reviewId + " " + reviewForm + "\n";
     }
 
     //상품에 리뷰 삭제
-    @DeleteMapping("{id}")
+    @DeleteMapping("{reviewId}")
     public String updateReview(
-            @PathVariable("productId") String productId,
-            @RequestAttribute("userId") String userId,
-            @PathVariable("reviewId") String reviewId) {
+            @PathVariable String productId,
+            @RequestAttribute String userId,
+            @PathVariable String reviewId) {
         return productId + " 상품에 리뷰 삭제: " + userId + "\n"
                 + "제품 번호: " + reviewId + "\n";
     }

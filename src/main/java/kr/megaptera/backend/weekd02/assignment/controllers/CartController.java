@@ -20,9 +20,8 @@ public class CartController {
     @ResponseStatus(HttpStatus.CREATED)
     public String addItem(
             @RequestBody String cartForm,
-            @RequestAttribute String userId,
-            @RequestAttribute String productId){
-        return "장바구니에 " + productId +" 상품 추가: " + userId + "\n" +  cartForm + "\n";
+            @RequestAttribute String userId){
+        return "장바구니에 상품 추가: " + userId + "\n" +  cartForm + "\n";
     }
 
     //장바구니에 상품 삭제
