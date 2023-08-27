@@ -26,7 +26,7 @@ public class CartController {
             @PathVariable String id,
             @RequestAttribute String userId
     ) {
-        return "장바구니에 상품 삭제\n";
+        return "장바구니에 상품 삭제" + id + "\n";
     }
 
     // 장바구니 (담긴 상품 목록)

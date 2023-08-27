@@ -25,7 +25,10 @@ public class UserController {
 
     // 내 정보 수정
     @PatchMapping("/me")
-    public String update(@RequestAttribute String userId) {
-        return "내 정보 수정" + userId + "\n";
+    public String update(
+            @RequestAttribute String userId,
+            @RequestBody String userDTO
+    ) {
+        return "내 정보 수정" + userDTO + "\n";
     }
 }
