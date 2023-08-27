@@ -18,15 +18,15 @@ public class SessionController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public String create(@RequestBody String id){
+    public String create(@RequestBody String loginDto){
         // Login
-        return "로그인 성공 \n" + id;
+        return "로그인 성공 \n" + loginDto;
     }
 
-    @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") String id){
+    @DeleteMapping
+    public String delete(@RequestAttribute("id") String userId){
         // Logout
-        return "로그아웃 : " + id;
+        return "로그아웃";
     }
 
 }

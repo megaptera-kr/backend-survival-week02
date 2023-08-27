@@ -13,42 +13,41 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/products/{productid}/reviews")
+@RequestMapping("/products/{productId}/reviews")
 public class ReviewController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public String create(@RequestBody String reviewDTO) {
-        return "{\"action\" : \"리뷰 등록\", \"body\" : \"" + reviewDTO.replace("\"", "\\\"") + "\"}";
+    public String create(
+            @PathVariable String productId,
+            @RequestBody String reviewDto,
+            @RequestAttribute String userId
+    ) {
+        return "{\"action\" : \"리뷰 등록\", \"body\" : \"" + reviewDto.replace("\"", "\\\"") + "\"}";
     }
 
     @GetMapping
-    public String getList(@PathVariable String productid){
+    public String getList(@PathVariable String productId){
 
-        return productid + "상품의 리뷰 목록" + "\n";
+        return productId + "상품의 리뷰 목록" + "\n";
     }
 
-    @GetMapping("/{reviewid}")
-    public String getDetail(
-            @PathVariable String productid,
-            @PathVariable String reviewid
-    ){
-
-        return productid + "상품의 " + reviewid + "리뷰 상세";
-    }
-
-    @PatchMapping("/{reviewid}")
+    @PatchMapping("/{reviewId}")
     public String update(
-            @PathVariable("reviewid") String reviewid,
-            @RequestBody String body
-    ){
-        return reviewid + "리뷰 수정\n" + body;
+            @PathVariable String productId,
+            @PathVariable String reviewId,
+            @RequestBody String reviewDto,
+            @RequestAttribute String userId
+    ) {
+        return reviewId + "리뷰 수정\n" + body;
     }
 
-    @DeleteMapping("/{reviewid}")
+    @DeleteMapping("/{reviewId}")
     public String delete(
-            @PathVariable("reviewid") String reviewid
-    ){
-        return reviewid + "리뷰 삭제\n";
+            @PathVariable String productId,
+            @PathVariable String id,
+            @RequestAttribute String userId
+    ) {
+        return "리뷰 삭제\n";
     }
 
 }

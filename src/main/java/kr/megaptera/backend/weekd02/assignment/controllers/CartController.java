@@ -10,24 +10,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-@RequestMapping("/users/{usersid}/cart")
+// cart 컬렉션 내에 items를 둠
+@RequestMapping("/cart")
 @RestController
 public class CartController {
 
     @GetMapping
-    public String getList(){
+    public String getList(@RequestAttribute String userId){
         return "장바구니 목록";
     }
 
-    @PostMapping
+    @PostMapping("/items")
     @ResponseStatus(HttpStatus.CREATED)
-    public String create(@RequestBody String body){
+    public String create(
+            @RequestBody String body,
+            @RequestBody String itemDto
+    ){
         return "장바구니 추가";
     }
 
-    @DeleteMapping("/{cartid}")
-    public String delete(@PathVariable String cartid){
+    @DeleteMapping("/items/{itemId}")
+    public String delete(
+            @PathVariable String cartId,
+            @RequestAttribute String userId
+    ){
         return "장바구니 상품 삭제";
     }
 
