@@ -17,8 +17,8 @@
 
 ### 내 정보
 
-- 내 정보 `GET /users/me` 
-- 내 정보 수정 `PUT /users/me` 
+- 내 정보 `GET /users/me`
+- 내 정보 수정 `PUT /users/me`
 
 ### 상품
 
@@ -33,9 +33,9 @@
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `PUT /users/me/carts`
-- 장바구니에 상품 삭제 `PUT /users/me/carts`
-- 장바구니 (담긴 상품 목록) `GET /users/me/carts`
+- 장바구니에 상품 추가 `POST /users/me/cart/products`
+- 장바구니에 상품 삭제 `DELETE /users/me/cart/products`
+- 장바구니 (담긴 상품 목록) `GET /users/me/cart/products`
 
 ### 주문하기
 
