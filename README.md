@@ -17,30 +17,30 @@
 
 ### 내 정보
 
-- 내 정보 
-- 내 정보 수정 
+- 내 정보 GET /user
+- 내 정보 수정  PATCH /user/{id}
 
 ### 상품
 
-- 상품 목록
-- 상품 상세
+- 상품 목록 GET /products
+- 상품 상세 POST /products/{id}
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성
-- 상품에 리뷰 수정
-- 상품에 리뷰 삭제
+- 상품에 리뷰 작성 POST /products/{product_id}/review/{id}
+- 상품에 리뷰 수정 PATCH /products/{prodict_id}/review/{id}
+- 상품에 리뷰 삭제 DELETE /products/{prodict_id}/review{id}
 
 ### 장바구니
 
-- 장바구니에 상품 추가
-- 장바구니에 상품 삭제
-- 장바구니 (담긴 상품 목록)
+- 장바구니에 상품 추가 POST /carts/items
+- 장바구니에 상품 삭제 DELETE /cart/items/{id}
+- 장바구니 (담긴 상품 목록) GET /cart
 
 ### 주문하기
 
-- 주문하기
-- 주문 목록
+- 주문하기 POST /orders
+- 주문 목록 Get /orders
 
 ## 질문과 답변
 
