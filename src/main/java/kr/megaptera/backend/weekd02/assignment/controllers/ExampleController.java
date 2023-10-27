@@ -18,6 +18,14 @@ public class ExampleController {
         @PathVariable String postId,
         @RequestAttribute String userId,
         @RequestBody String commentDTO
+        /*
+        DTO
+        {
+        "text": "댓글 내용",
+        "author": "댓글 작성자",
+        "createdDate": "댓글 작성일"
+        }
+        */
     ) {
         return "댓글 작성" + commentDTO + "\n";
     }
