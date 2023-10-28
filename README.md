@@ -94,7 +94,7 @@ DELETE /reviews/1
 - 장바구니에 상품 추가
 ### Request
 ```javascript
-POST /wishlists/1/products
+POST /carts/1/products
 ```
 | Parameter | Type    | Description |
 |:----------|:--------|:------------|
@@ -103,7 +103,7 @@ POST /wishlists/1/products
 
 - 장바구니에 상품 삭제
 ```javascript
-DELETE /wishlists/1/products
+DELETE /carts/1/products
 ```
 | Parameter | Type    | Description |
 |:----------|:--------|:------------|
@@ -112,7 +112,7 @@ DELETE /wishlists/1/products
 
 - 장바구니 (담긴 상품 목록)
 ```javascript
-GET /wishlists
+GET /carts
 ```
 
 
