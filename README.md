@@ -61,13 +61,13 @@ PATCH /users/me
 - 상품 목록
 ### Request
 ```javascript
-GET /orders
+GET /products
 ```
 
 - 상품 상세
 ### Request
 ```javascript
-GET /orders/1
+GET /products/1
 ```
 
 ### 상품 리뷰
@@ -75,7 +75,7 @@ GET /orders/1
 - 상품에 리뷰 작성
 ### Request
 ```javascript
-POST /orders/1/reviews
+POST /products/1/reviews
 ```
 
 - 상품에 리뷰 수정
