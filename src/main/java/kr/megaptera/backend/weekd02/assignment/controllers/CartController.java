@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class CartController {
     @GetMapping("/items")
     public String getCartItems() {
-        return "cart info";
+        return "장바구니 조회";
     }
 
     @PostMapping("/items")
     public String putCart() {
-        return "cart info";
+        return "장바구니 추가";
     }
 
     @DeleteMapping("/{productId}")
     public String deleteCartItem(@PathVariable String productId) {
-        return "deleted cart info";
+        return "deleted item " + productId + " from cart";
     }
 }

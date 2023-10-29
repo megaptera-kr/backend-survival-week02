@@ -1,5 +1,7 @@
 package kr.megaptera.backend.weekd02.assignment;
 
+import java.util.Arrays;
+
 public class User {
     private String userId;
     private String password;
@@ -10,6 +12,7 @@ public class User {
         this.userId = userId;
         this.password = password;
         this.name = name;
+        this.orders = new Order[0];
     }
 
     public String getUserId() {
@@ -42,5 +45,15 @@ public class User {
 
     public void setOrders(Order[] orders) {
         this.orders = orders;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", orders=" + Arrays.toString(orders) +
+                '}';
     }
 }

@@ -14,6 +14,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
         // 사용자 인증
         request.setAttribute("userId", "1");
+        System.out.println("request in AuthInterceptor " + request);
         return true;
     }
 }

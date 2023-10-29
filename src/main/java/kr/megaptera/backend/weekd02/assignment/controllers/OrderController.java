@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
     @PostMapping()
     public String createOrder() {
-        return "orders";
+        return "주문 생성완료";
     }
 
     @GetMapping()
     public String getOrders() {
-        return "orders";
+        return "주문 목록";
     }
 
     @GetMapping("/{orderId}")
     public String getOrder(@PathVariable String orderId) {
-        return "order details";
+        return "개별주문 " + orderId + " 조회";
     }
 }
