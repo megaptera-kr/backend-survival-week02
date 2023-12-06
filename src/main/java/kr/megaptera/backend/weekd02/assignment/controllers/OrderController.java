@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 	@GetMapping
 	public String list(@RequestAttribute String userId) {
-		return "주문 목록" + userId + "\n";
+		return "주문 목록:" + userId + "\n";
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public String create(@RequestAttribute String userId, @RequestBody String orderDto) {
-		return "주문하기" + orderDto + "\n";
+		return "주문하기: " + orderDto + "\n";
 	}
 }
