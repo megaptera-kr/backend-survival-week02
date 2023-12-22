@@ -6,19 +6,19 @@
 
 - 게시글 조회 `GET /posts`
 - 게시글 작성 `POST /posts`
-- 게시글 수정 `PATCH /posts/{id}`
-- 게시글 삭제 `DELETE /posts/{id}`
+- 게시글 수정 `PATCH /posts/{postId}`
+- 게시글 삭제 `DELETE /posts/{postId}`
 
 ### 로그인/회원가입
 
-- 로그인 `POST /login`
-- 로그아웃 `POST /logout`
-- 회원가입 `POST /join`
+- 로그인 `POST /sessions/login`
+- 로그아웃 `POST /sessions/logout`
+- 회원가입 `POST sessions/join`
 
 ### 내 정보
 
-- 내 정보 `GET /users/{id}`
-- 내 정보 수정 `PATCH /users/{id}`
+- 내 정보 `GET /users/{userId}`
+- 내 정보 수정 `PATCH /users/{userId}`
 
 ### 상품
 
@@ -27,14 +27,14 @@
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성 `POST /goods/{id}/reviews`
-- 상품에 리뷰 수정 `PATCH /goods/{id}/reviews/{reviewId}`
-- 상품에 리뷰 삭제 `DELETE /goods/{id}/reviews/{reviewId}`
+- 상품에 리뷰 작성 `POST /goods/{goodsId}/reviews`
+- 상품에 리뷰 수정 `PATCH /goods/{goodsId}/reviews/{reviewId}`
+- 상품에 리뷰 삭제 `DELETE /goods/{goodsId}/reviews/{reviewId}`
 
 ### 장바구니
 
 - 장바구니에 상품 추가 `POST /cart/goods`
-- 장바구니에 상품 삭제 `DELETE /cart/goods/{id}`
+- 장바구니에 상품 삭제 `DELETE /cart/goods/{goodsId}`
 - 장바구니 (담긴 상품 목록) `GET /cart/goods`
 
 ### 주문하기

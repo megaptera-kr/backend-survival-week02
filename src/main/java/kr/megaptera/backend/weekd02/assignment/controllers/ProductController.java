@@ -1,21 +1,21 @@
 package kr.megaptera.backend.weekd02.assignment.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 
     @GetMapping
-    public String getProducts() {
+    public String getProducts(
+            @RequestAttribute String userId,
+            @RequestBody String goodsDto) {
         return "상품 목록\n";
     }
 
-    @GetMapping("/{id}")
-    public String getProductsDetail(@PathVariable String id) {
-        return "상품 상세 : " + id + "\n";
+    @GetMapping("/{goodsId}")
+    public String getProductsDetail(
+            @RequestBody String goodsDto) {
+        return "상품 상세 : " + goodsDto + "\n";
     }
 }
