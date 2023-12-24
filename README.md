@@ -27,15 +27,15 @@
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성 `POST /products/{post_id}/comments`
-- 상품에 리뷰 수정 `PATCH /products/{post_id}/comments/{id}`
-- 상품에 리뷰 삭제 `DELETE /products/{post_id}/comments/{id}`
+- 상품에 리뷰 작성 `POST /products/{product_id}/reviews`
+- 상품에 리뷰 수정 `PATCH /products/{product_id}/reviews/{id}`
+- 상품에 리뷰 삭제 `DELETE /products/{product_id}/reviews/{id}`
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /basket`
-- 장바구니에 상품 삭제 `DELETE /basket/{id}`
-- 장바구니 (담긴 상품 목록) `GET /basket`
+- 장바구니에 상품 추가 `POST /cart/items`
+- 장바구니에 상품 삭제 `DELETE /cart/items/{id}`
+- 장바구니 (담긴 상품 목록) `GET /cart`
 
 ### 주문하기
 
