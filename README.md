@@ -17,8 +17,8 @@
 
 ### 내 정보
 
-- 내 정보 `GET /users/{id}`
-- 내 정보 수정 `PATCH /users/{id}`
+- 내 정보 `GET /users/me`
+- 내 정보 수정 `PATCH /users/me`
 
 ### 상품
 
@@ -27,15 +27,15 @@
 
 ### 상품 리뷰
 
-- 상품에 리뷰 작성 `POST /products/{id}/review`
-- 상품에 리뷰 수정 `PATCH /products/{id}/review`
-- 상품에 리뷰 삭제 `DELETE /products/{id}/review`
+- 상품에 리뷰 작성 `POST /products/{product_id}/reviews`
+- 상품에 리뷰 수정 `PATCH /products/{product_id}/reviews/{id}`
+- 상품에 리뷰 삭제 `DELETE /products/{product_id}/review/{id}`
 
 ### 장바구니
 
-- 장바구니에 상품 추가 `POST /users/{id}/cart`
-- 장바구니에 상품 삭제 `DELETE /users/{id}/cart/{id}`
-- 장바구니 (담긴 상품 목록) `GET /users/{id}/cart`
+- 장바구니에 상품 추가 `POST /cart/items`
+- 장바구니에 상품 삭제 `DELETE /cart/items/{id}`
+- 장바구니 (담긴 상품 목록) `GET /cart`
 
 ### 주문하기
 
