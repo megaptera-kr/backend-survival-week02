@@ -18,7 +18,7 @@
 ### 내 정보
 
 - 내 정보 `GET /user/{id}`
-- 내 정보 수정 `FATCH /user/{id}`
+- 내 정보 수정 `PATCH /user/{id}`
 
 ### 상품
 
@@ -28,7 +28,7 @@
 ### 상품 리뷰
 
 - 상품에 리뷰 작성 `POST /product/{productId}/review/{reviewSeq}`
-- 상품에 리뷰 수정 `FATCH /product/{productId}/review/{reviewSeq}`
+- 상품에 리뷰 수정 `PATCH /product/{productId}/review/{reviewSeq}`
 - 상품에 리뷰 삭제 `DELETE /product/{productId}/review/{reviewSeq}`
 
 ### 장바구니
